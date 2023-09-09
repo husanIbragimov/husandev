@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-h0i_n622!oy1^4am3mmhf4tub%cazd)k7d!og^-rxr&f*#^2nq
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
+CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = ['https://husanibragimov.uz', 'https://www.husanibragimov.uz']
 
 
 # Application definition
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
 
     # libs
     'ckeditor',
+    'corsheaders',
 
     # apps
     'apps.blog',
@@ -48,6 +51,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,6 +62,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+
+# cors headers ->
+CORS_ALLOW_METHODS = [
+    '*'
+]
+
+CORS_ALLOW_HEADERS = [
+    '*'
+]
+CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
     {
