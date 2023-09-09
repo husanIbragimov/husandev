@@ -3,6 +3,15 @@ from ckeditor.fields import RichTextField
 from datetime import datetime
 
 
+class MainImage(models.Model):
+    image = models.ImageField(upload_to='media/main_images/', null=True, blank=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Date: {self.created_at}"
+
+
 class Resume(models.Model):
     resume = models.FileField(upload_to='media/resume/', null=True)
     created_at = models.DateField(auto_now_add=True)

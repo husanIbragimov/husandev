@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import BlogNews, AboutMe, Education, Experience, MeImages, Resume
+from .models import BlogNews, AboutMe, Education, Experience, MeImages, Resume, MainImage
 from apps.service.models import BannerDetail, Category, Portfolio
 
 
@@ -13,6 +13,7 @@ def index(request):
     category = Category.objects.all().order_by('-id')
     portfolios = Portfolio.objects.all().order_by('-id')
     blogs = BlogNews.objects.all().order_by('-id')
+    main_image = MainImage.objects.all().last()
     ctx = {
         "resume": resume,
         "about": about_qs,
@@ -22,6 +23,8 @@ def index(request):
 
         'categories': category,
         'portfolios': portfolios,
+
+        'main_image': main_image,
 
         'blogs': blogs
     }

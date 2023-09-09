@@ -40,4 +40,5 @@ class AboutMeAdmin(admin.ModelAdmin):
 admin.site.register(Resume)
 admin.site.register(MeImages)
 admin.site.register(Education)
+admin.site.register(MainImage)
 admin.site.register(Experience)
