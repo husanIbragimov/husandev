@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import BlogNews, AboutMe, Education, Experience, MeImages, Resume, MainImage
 from apps.service.models import BannerDetail, Category, Portfolio
+from apps.contact.models import GetInTouch
 
 
 def index(request):
@@ -14,6 +15,22 @@ def index(request):
     portfolios = Portfolio.objects.all().order_by('-id')
     blogs = BlogNews.objects.all().order_by('-id')
     main_image = MainImage.objects.all().last()
+
+    if request.method == 'POST':
+        name = request.POST.get('name', None)
+        email = request.POST.get('email', None)
+        phone_number = request.POST.get('phone', None)
+        message = request.POST.get('message', None)
+        print(name, email, phone_number, message)
+
+        GetInTouch.objects.create(
+            name=name,
+            email=email,
+            phone_number=phone_number,
+            message=message
+        )
+        return render(request, 'index.html', {'success': 'Your message has been sent successfully.'})
+
     ctx = {
         "resume": resume,
         "about": about_qs,

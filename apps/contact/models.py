@@ -8,6 +8,7 @@ phone_regex = RegexValidator(
 
 
 class GetInTouch(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
     phone_number = models.CharField(validators=[phone_regex], max_length=17,
                                     blank=True, unique=True,
@@ -16,7 +17,7 @@ class GetInTouch(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        if self.message:
-            return self.message
-        return "None message"
+        if self.name:
+            return self.name
+        return "AnonymousUser"
 

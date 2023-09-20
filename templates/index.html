@@ -89,7 +89,7 @@
                 {#                <li><a href="#service">Service</a></li>#}
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#news">News</a></li>
-                {#                <li><a href="#contact">Contact</a></li>#}
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -109,7 +109,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#news">News</a></li>
-                    {#                    <li><a href="#contact">Contact</a></li>#}
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="copyright">
@@ -382,7 +382,47 @@
                     </div>
                 </div>
             </div>
-
+            <div id="contact" class="tokyo_tm_section">
+                    <div class="container">
+                        <div class="tokyo_tm_contact">
+                            <div class="tokyo_tm_title">
+                                <div class="title_flex">
+                                    <div class="left">
+                                        <span>Contact</span>
+                                        <h3>Get in Touch</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fields">
+                                <form method="post" class="contact_form" id="contact_form" autocomplete="off">
+                                    {% csrf_token %}
+                                    <div class="returnmessage"
+                                        data-success="Your message has been received, We will contact you soon."></div>
+                                    <div class="empty_notice"><span>Please Fill Required Fields</span></div>
+                                    <div class="first">
+                                        <ul>
+                                            <li>
+                                                <input id="name" type="text" name="name" placeholder="Name">
+                                            </li>
+                                            <li>
+                                                <input id="email" type="text" name="email" placeholder="Email">
+                                            </li>
+                                            <li>
+                                                <input id="phone" type="tel" name="phone" placeholder="Phone number">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="last">
+                                        <textarea id="message" name="message" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="tokyo_tm_button" data-position="left">
+                                        <button type="submit" class="btn sent_message">Send Message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 
