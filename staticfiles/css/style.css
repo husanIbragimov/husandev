@@ -582,6 +582,17 @@ a{
 	padding: 100px 0px 100px 0px;
 }
 
+.sent_message {
+	background-color: #070707; /* Green */
+  	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+}
+
 .tokyo_tm_button{
 	width: 100%;
 	height: auto;
