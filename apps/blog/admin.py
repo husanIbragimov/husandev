@@ -1,44 +1,26 @@
 from django.contrib import admin
-from .models import *
+
+from .models import Blog
 
 
-class BlogImagesInline(admin.StackedInline):
-    model = BlogImages
-    extra = 1
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created_at', 'is_published']
+    list_filter = ['is_published']
+    search_fields = ['title', 'content']
+    prepopulated_fields = {'slug': ('title',)}
+    date_hierarchy = 'created_at'
+    save_on_top = True
+    save_as = True
+    list_per_page = 10
+    actions = ['make_published', 'make_unpublished']
 
+    def make_published(self, request, queryset):
+        queryset.update(is_published=True)
 
-@admin.register(BlogNews)
-class BlogNewsAdmin(admin.ModelAdmin):
-    inlines = [BlogImagesInline]
-    list_display = ('title', 'created_at', 'id')
+    make_published.short_description = 'Mark selected blogs as published'
 
+    def make_unpublished(self, request, queryset):
+        queryset.update(is_published=False)
 
-class ExperienceInline(admin.TabularInline):
-    model = Experience
-    extra = 1
-    readonly_fields = ('created_at',)
-
-
-class EducationInline(admin.TabularInline):
-    model = Education
-    extra = 1
-    readonly_fields = ('created_at',)
-
-
-class MeImagesInline(admin.TabularInline):
-    model = MeImages
-    extra = 1
-
-
-@admin.register(AboutMe)
-class AboutMeAdmin(admin.ModelAdmin):
-    inlines = [MeImagesInline, ExperienceInline, EducationInline]
-    list_display = ('title', 'age')
-    # readonly_fields = ('my_age',)
-
-
-admin.site.register(Resume)
-admin.site.register(MeImages)
-admin.site.register(Education)
-admin.site.register(MainImage)
-admin.site.register(Experience)
+    make_unpublished.short_description = 'Mark selected blogs as unpublished'
