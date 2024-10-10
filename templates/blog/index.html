@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}Husan.I{% endblock %}
+
+{% block content %}
+
+    <div class="main">
+        <section class="home-hero">
+            <div class="div container home-hero-inner">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="intro-wrap flex">
+                            <div class="intro-inner">
+                                <h1>Hello, I am Husan</h1>
+                                <p>A backend engineer from Uzbekistan, focusing on user experience, visual and
+                                    interaction design. This is my personal blog.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-lg-4 offset-lg-1">
+                        <div class="portrait-wrap">
+                            <img class="lazy" data-srcset="/content/images/size/w300/2020/04/saima-gul-headshot.jpg 300w,
+                            /content/images/size/w600/2020/04/saima-gul-headshot.jpg 600w,"
+                                 sizes="(max-width: 332px) 300px, (max-width: 767px) 600px, (min-width: 768px) 350px, 600px"
+                                 data-src="content/images/size/w600/2020/04/saima-gul-headshot.jpg"
+                                 alt="portrait">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="post-loop-wrap">
+                    {% for post in object_list %}
+                        <div class="post">
+                            <div class="post-info">
+                                <span class="primary-tag"><a href="{{ post.get_absolute_url }}">News</a></span>
+                                <span class="date"><time
+                                        datetime="{{ post.created_at|date:'Y-m-d' }}">{{ post.created_at|date:'j F, Y' }}</time></span>
+                                <span class="visibility">Free</span>
+                            </div>
+                            <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                            <div class="post-excerpt">
+                                <a href="{{ post.get_absolute_url }}">
+                                    <p>{{ post.content|safe|truncatewords:14 }}</p>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                {% if is_paginated %}
+                    <div class="pagination-wrap flex" role="navigation">
+                        <div class="newer-posts">
+                            {% if page_obj.has_previous %}
+                                <a href="?page={{ page_obj.previous_page_number }}">
+                                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                                        <path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"></path>
+                                    </svg>
+                                    Newer Posts</a>
+                            {% endif %}
+                        </div>
+                        <span class="page-number text-center">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                        <div class="older-posts">
+                            {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}">Older Posts
+                                    <svg width="24" height="24"
+                                         xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"></path>
+                                    </svg>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
