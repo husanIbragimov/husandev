@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,6 +26,8 @@ SECRET_KEY = 'django-insecure-f#re$(3&1b552p#^a99m$d8wt=fzc8wvyze23k6nnx^z)89wtt
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+
+TESTING = True if (len(sys.argv) > 1 and sys.argv[1] == "test") else False
 
 # Application definition
 
@@ -55,6 +58,22 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+if not TESTING:
+    INSTALLED_APPS = [
+        *INSTALLED_APPS,
+        "debug_toolbar",
+    ]
+    MIDDLEWARE = [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+        *MIDDLEWARE,
+    ]
+
+INTERNAL_IPS = [
+    "localhost",
+    "127.0.0.1",
 ]
 
 ROOT_URLCONF = 'core.urls'

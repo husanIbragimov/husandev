@@ -9,9 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Husan.I{% endblock %}</title>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;family=PT+Serif:wght@400;700&amp;display=swap"
-            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;family=PT+Serif:wght@400;700&amp;display=swap" rel="stylesheet">
     <link href="{% static '' %}assets/css/screen.mind845.css?v=3c9bb59ff1" rel="stylesheet">
     <script>
         if (typeof (Storage) !== 'undefined') {
@@ -22,8 +20,9 @@
             }
         }
     </script>
+    <link rel="icon" href="{% static '' %}favicon.ico" type="image/x-icon">
     <meta name="description"
-          content="A product design consultant from India, focusing on user experience, visual and interaction design. This is my personal blog.">
+          content="A backend programmer from Uzbekistan who wants to change himself and never stops striving. This is my personal blog.">
     <link rel="canonical" href="{% url 'blog:home' %}">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <link rel="next" href="{% url 'blog:home' %}">
@@ -32,46 +31,19 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Husan.I">
     <meta property="og:description"
-          content="A product design consultant from India, focusing on user experience, visual and interaction design. This is my personal blog.">
+          content="A backend programmer from Uzbekistan who wants to change himself and never stops striving. This is my personal blog.">
     <meta property="og:url" content="https://saima.gbjsolution.com/">
     <meta property="og:image" content="https://saima.gbjsolution.com/content/images/2020/04/saima-gul-headshot.jpg">
     <meta property="article:publisher" content="https://www.facebook.com/gbjsolution">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Husan.I">
     <meta name="twitter:description"
-          content="A product design consultant from India, focusing on user experience, visual and interaction design. This is my personal blog.">
+          content="A backend programmer from Uzbekistan who wants to change himself and never stops striving. This is my personal blog.">
     <meta name="twitter:url" content="https://saima.gbjsolution.com/">
     <meta name="twitter:image" content="https://saima.gbjsolution.com/content/images/2020/04/saima-gul-headshot.jpg">
     <meta name="twitter:site" content="@husanibragimov_">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="1320">
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Husan.I",
-                "url": "https://saima.gbjsolution.com/",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://saima.gbjsolution.com/favicon.ico",
-                    "width": 48,
-                    "height": 48
-                }
-            },
-            "url": "https://saima.gbjsolution.com/",
-            "image": {
-                "@type": "ImageObject",
-                "url": "https://saima.gbjsolution.com/content/images/2020/04/saima-gul-headshot.jpg",
-                "width": 1200,
-                "height": 1320
-            },
-            "mainEntityOfPage": "https://saima.gbjsolution.com/",
-            "description": "A product design consultant from India, focusing on user experience, visual and interaction design. This is my personal blog."
-        }
-    </script>
 
     <meta name="generator" content="Ghost 5.74">
     <link rel="alternate" type="application/rss+xml" title="Husan.I" href="{% url 'blog:home' %}">
@@ -184,21 +156,26 @@ window.onload = function () {
             <div class="header-right flex">
                 <nav class="header-nav-wrap">
                     <ul class="nav-list">
-                        <li class="nav-item {% if request.resolver_match.url_name == 'home' %}nav-item-current{% endif %}"><a href="{% url 'blog:home' %}">Home</a></li>
-                        <li class="nav-item {% if request.resolver_match.url_name == 'about' %}nav-item-current{% endif %}"><a href="{% url 'blog:about' %}">About</a></li>
-                        <li class="nav-item "><a href="elements/index.html">Elements</a></li>
-                        <li class="nav-item "><a href="tags/index.html">Tags</a></li>
-                        <li class="nav-item "><a href="authors/index.html">Authors</a></li>
-                        <li class="nav-item "><a href="contact/index.html">Contact</a></li>
-                        <li class="nav-item "><a href="yearly-archive/index.html">Yearly Archive</a></li>
-                        <li class="nav-item "><a href="monthly-archive/index.html">Monthly Archive</a></li>
-
-                        <li class="nav-item">
-                            <a href="signin/index.html">Log in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="signup/index.html">Sign up</a>
-                        </li>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'home' %}nav-item-current{% endif %}">
+                            <a href="{% url 'blog:home' %}">Home</a></li>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'about' %}nav-item-current{% endif %}">
+                            <a href="{% url 'blog:about' %}">About</a></li>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'blog_list' %}nav-item-current{% endif %}">
+                            <a href="{% url 'blog:blog_list' %}">Blogs</a></li>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}nav-item-current{% endif %}">
+                            <a href="{% url 'blog:contact' %}">Contact</a></li>
+                        {#                        <li class="nav-item "><a href="elements/index.html">Elements</a></li>#}
+                        {#                        <li class="nav-item "><a href="tags/index.html">Tags</a></li>#}
+                        {#                        <li class="nav-item "><a href="authors/index.html">Authors</a></li>#}
+                        {#                        <li class="nav-item "><a href="yearly-archive/index.html">Yearly Archive</a></li>#}
+                        {#                        <li class="nav-item "><a href="monthly-archive/index.html">Monthly Archive</a></li>#}
+                        {##}
+                        {#                        <li class="nav-item">#}
+                        {#                            <a href="signin/index.html">Log in</a>#}
+                        {#                        </li>#}
+                        {#                        <li class="nav-item">#}
+                        {#                            <a href="signup/index.html">Sign up</a>#}
+                        {#                        </li>#}
                     </ul>
                 </nav>
                 <a href="javascript:" class="nav-icon theme-icon" id="js-toggle-dark-light"
@@ -234,13 +211,13 @@ window.onload = function () {
                         </span>
                     </div>
                 </a>
-                <a href="javascript:" class="nav-icon search-icon" aria-label="Open search" data-ghost-search>
-                        <span class="search-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.655 19.9989L18.6896 16.0452C19.969 14.4152 20.6632 12.4024 20.6607 10.3303C20.6607 8.48497 20.1134 6.68104 19.0882 5.14668C18.063 3.61231 16.6058 2.41642 14.9009 1.71023C13.196 1.00404 11.32 0.819271 9.51007 1.17928C7.70017 1.5393 6.03766 2.42792 4.73279 3.73279C3.42792 5.03766 2.5393 6.70017 2.17928 8.51007C1.81927 10.32 2.00404 12.196 2.71023 13.9009C3.41642 15.6058 4.61231 17.063 6.14668 18.0882C7.68104 19.1134 9.48497 19.6607 11.3303 19.6607C13.4024 19.6632 15.4152 18.969 17.0452 17.6896L20.9989 21.655C21.1073 21.7643 21.2363 21.8511 21.3784 21.9103C21.5205 21.9695 21.673 22 21.8269 22C21.9809 22 22.1334 21.9695 22.2755 21.9103C22.4176 21.8511 22.5466 21.7643 22.655 21.655C22.7643 21.5466 22.8511 21.4176 22.9103 21.2755C22.9695 21.1334 23 20.9809 23 20.8269C23 20.673 22.9695 20.5205 22.9103 20.3784C22.8511 20.2363 22.7643 20.1073 22.655 19.9989V19.9989ZM4.33259 10.3303C4.33259 8.94631 4.743 7.59337 5.51192 6.44259C6.28084 5.29182 7.37374 4.3949 8.65241 3.86526C9.93108 3.33561 11.3381 3.19704 12.6955 3.46705C14.053 3.73705 15.2998 4.40353 16.2785 5.38218C17.2571 6.36083 17.9236 7.60771 18.1936 8.96514C18.4636 10.3226 18.325 11.7296 17.7954 13.0083C17.2658 14.2869 16.3688 15.3798 15.2181 16.1487C14.0673 16.9177 12.7144 17.3281 11.3303 17.3281C9.47441 17.3281 7.69451 16.5908 6.38218 15.2785C5.06985 13.9662 4.33259 12.1862 4.33259 10.3303Z"></path>
-                            </svg>
-                        </span>
-                </a>
+{#                <a href="javascript:" class="nav-icon search-icon" aria-label="Open search" data-ghost-search>#}
+{#                    <span class="search-icon">#}
+{#                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">#}
+{#                            <path d="M22.655 19.9989L18.6896 16.0452C19.969 14.4152 20.6632 12.4024 20.6607 10.3303C20.6607 8.48497 20.1134 6.68104 19.0882 5.14668C18.063 3.61231 16.6058 2.41642 14.9009 1.71023C13.196 1.00404 11.32 0.819271 9.51007 1.17928C7.70017 1.5393 6.03766 2.42792 4.73279 3.73279C3.42792 5.03766 2.5393 6.70017 2.17928 8.51007C1.81927 10.32 2.00404 12.196 2.71023 13.9009C3.41642 15.6058 4.61231 17.063 6.14668 18.0882C7.68104 19.1134 9.48497 19.6607 11.3303 19.6607C13.4024 19.6632 15.4152 18.969 17.0452 17.6896L20.9989 21.655C21.1073 21.7643 21.2363 21.8511 21.3784 21.9103C21.5205 21.9695 21.673 22 21.8269 22C21.9809 22 22.1334 21.9695 22.2755 21.9103C22.4176 21.8511 22.5466 21.7643 22.655 21.655C22.7643 21.5466 22.8511 21.4176 22.9103 21.2755C22.9695 21.1334 23 20.9809 23 20.8269C23 20.673 22.9695 20.5205 22.9103 20.3784C22.8511 20.2363 22.7643 20.1073 22.655 19.9989V19.9989ZM4.33259 10.3303C4.33259 8.94631 4.743 7.59337 5.51192 6.44259C6.28084 5.29182 7.37374 4.3949 8.65241 3.86526C9.93108 3.33561 11.3381 3.19704 12.6955 3.46705C14.053 3.73705 15.2998 4.40353 16.2785 5.38218C17.2571 6.36083 17.9236 7.60771 18.1936 8.96514C18.4636 10.3226 18.325 11.7296 17.7954 13.0083C17.2658 14.2869 16.3688 15.3798 15.2181 16.1487C14.0673 16.9177 12.7144 17.3281 11.3303 17.3281C9.47441 17.3281 7.69451 16.5908 6.38218 15.2785C5.06985 13.9662 4.33259 12.1862 4.33259 10.3303Z"></path>#}
+{#                        </svg>#}
+{#                    </span>#}
+{#                </a>#}
                 <a class="menu-icon nav-icon" id="menu-toggle">
                     <span class="line"></span>
                     <span class="line"></span>
@@ -250,21 +227,14 @@ window.onload = function () {
             <div class="mobile-nav-wrap" id="mobile-nav">
                 <nav class="header-nav-wrap">
                     <ul class="nav-list">
-                        <li class="nav-item  nav-item-current"><a href="index.html">Home</a></li>
-                        <li class="nav-item "><a href="about/index.html">About</a></li>
-                        <li class="nav-item "><a href="elements/index.html">Elements</a></li>
-                        <li class="nav-item "><a href="tags/index.html">Tags</a></li>
-                        <li class="nav-item "><a href="authors/index.html">Authors</a></li>
-                        <li class="nav-item "><a href="contact/index.html">Contact</a></li>
-                        <li class="nav-item "><a href="yearly-archive/index.html">Yearly Aarchive</a></li>
-                        <li class="nav-item "><a href="monthly-archive/index.html">Monthly Archive</a></li>
-
-                        <li class="nav-item">
-                            <a href="signin/index.html">Log in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="signup/index.html">Sign up</a>
-                        </li>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'home' %}nav-item-current{% endif %}">
+                            <a href="{% url 'blog:home' %}">Home</a></li>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'about' %}nav-item-current{% endif %}">
+                            <a href="{% url 'blog:about' %}">About</a></li>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'blog_list' %}nav-item-current{% endif %}">
+                            <a href="{% url 'blog:blog_list' %}">Blogs</a></li>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}nav-item-current{% endif %}">
+                            <a href="{% url 'blog:contact' %}">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -285,11 +255,14 @@ window.onload = function () {
                             <h5 class="widget-title">Navigation</h5>
                             <div class="widget-content">
                                 <ul class="nav-list">
-                                    <li class="nav-item"><a href="terms/index.html">Terms</a></li>
-                                    <li class="nav-item"><a href="privacy/index.html">Privacy</a></li>
-                                    <li class="nav-item"><a href="about/index.html">About</a></li>
-                                    <li class="nav-item"><a href="contact/index.html">Contact</a></li>
-                                    <li class="nav-item"><a href="error-page/index.html">404 page</a></li>
+                                    <li class="nav-item {% if request.resolver_match.url_name == 'home' %}nav-item-current{% endif %}">
+                                        <a href="{% url 'blog:home' %}">Home</a></li>
+                                    <li class="nav-item {% if request.resolver_match.url_name == 'about' %}nav-item-current{% endif %}">
+                                        <a href="{% url 'blog:about' %}">About</a></li>
+                                    <li class="nav-item {% if request.resolver_match.url_name == 'blog_list' %}nav-item-current{% endif %}">
+                                        <a href="{% url 'blog:blog_list' %}">Blogs</a></li>
+                                    <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}nav-item-current{% endif %}">
+                                        <a href="{% url 'blog:contact' %}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -299,11 +272,11 @@ window.onload = function () {
                             <h5 class="widget-title">Social media</h5>
                             <div class="widget-content">
                                 <ul class="nav-list">
-                                    <li><a href="https://twitter.com/gbjsolution">Twitter</a></li>
-                                    <li><a href="https://www.facebook.com/gbjsolution">Facebook</a></li>
-                                    <li><a href="#">Instagram</a></li>
-                                    <li><a href="#">Dribbble</a></li>
-                                    <li><a href="#">Behance</a></li>
+                                    <li><a href="https://github.com/husanibragimov">GitHub</a></li>
+                                    <li><a href="https://twitter.com/husanibragimov_">Twitter</a></li>
+                                    <li><a href="https://www.linkedin.com/in/husanibragimov/">LinkedIn</a></li>
+                                    <li><a href="https://t.me/husandev/">Telegram</a></li>
+                                    <li><a href="https://www.instagram.com/husanibragimov_/">Instagram</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -313,14 +286,14 @@ window.onload = function () {
                             <h5 class="widget-title">Tags</h5>
                             <div class="widget-content">
                                 <ul class="tag-list">
-                                    <li><a href="tag/food/index.html">Food</a></li>
-                                    <li><a href="tag/health/index.html">Health</a></li>
-                                    <li><a href="tag/inspiration/index.html">Inspiration</a></li>
-                                    <li><a href="tag/lifestyle/index.html">Lifestyle</a></li>
-                                    <li><a href="tag/nature/index.html">Nature</a></li>
-                                    <li><a href="tag/news/index.html">News</a></li>
-                                    <li><a href="tag/technology/index.html">Technology</a></li>
-                                    <li><a href="tag/travel/index.html">Travel</a></li>
+                                    <li><a href="#">Food</a></li>
+                                    <li><a href="#">Health</a></li>
+                                    <li><a href="#">Inspiration</a></li>
+                                    <li><a href="#">Lifestyle</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Technology</a></li>
+                                    <li><a href="#">Travel</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -353,8 +326,7 @@ window.onload = function () {
                 <div class="row">
                     <div class="col">
                         <div class="copyright text-center">
-                            &copy; 2024 <a href="index.html">Husan.I</a> - All right Reserved. Published with <a
-                                href="https://ghost.org/?via=biswajit48">Ghost</a>
+                            &copy; 2024 <a href="https://t.me/husandev/">Husan.I</a> - All right Reserved.
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<hd>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</hd>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block content %}
+    <div class="main">
+        <div class="single-post-wrap no-image">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="post-inner-wrap">
+                            <h1 class="post-title">Blogs</h1>
+                            <div class="archive-wrap">
+                                {% for year, blogs in blogs_by_year.items %}
+                                    <div class="archive-post-card py-{{ year }}">
+                                        <div class="py">{{ year }}</div>
+                                        {% for blog in blogs %}
+                                            <article class="archive-post">
+                                                <div class="inner">
+                                                    <time class="post-date" datetime="{{ blog.created_at|date:'Y-m-d' }}">{{ blog.created_at|date:"M d" }} -</time>
+                                                    <h2 class="title h5"><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h2>
+                                                </div>
+                                            </article>
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
