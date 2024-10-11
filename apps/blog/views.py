@@ -13,7 +13,7 @@ from .models import Blog
 
 class HomeIndexView(ListView):
     template_name = 'blog/index.html'
-    paginate_by = 1
+    paginate_by = 5
 
     def get_queryset(self):
         return Blog.objects.filter(is_published=True)

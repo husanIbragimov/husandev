@@ -19,10 +19,9 @@
                     </div>
                     <div class="col-md-5 col-lg-4 offset-lg-1">
                         <div class="portrait-wrap">
-                            <img class="lazy" data-srcset="/content/images/size/w300/2020/04/saima-gul-headshot.jpg 300w,
-                            /content/images/size/w600/2020/04/saima-gul-headshot.jpg 600w,"
+                            <img class="lazy" data-srcset="{% static 'husan_me.jpg' %} 300w, {% static 'husan_me.jpg' %} 600w"
                                  sizes="(max-width: 332px) 300px, (max-width: 767px) 600px, (min-width: 768px) 350px, 600px"
-                                 data-src="content/images/size/w600/2020/04/saima-gul-headshot.jpg"
+                                 data-src="{% static 'husan_me.jpg' %}"
                                  alt="portrait">
                         </div>
                     </div>
