@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Husan.I{% endblock %}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;family=PT+Serif:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;family=PT+Serif:wght@400;700&amp;display=swap"
+          rel="stylesheet">
     <link href="{% static '' %}assets/css/screen.mind845.css?v=3c9bb59ff1" rel="stylesheet">
     <script>
         if (typeof (Storage) !== 'undefined') {
@@ -32,22 +33,22 @@
     <meta property="og:title" content="Husan.I">
     <meta property="og:description"
           content="A backend programmer from Uzbekistan who wants to change himself and never stops striving. This is my personal blog.">
-    <meta property="og:url" content="https://saima.gbjsolution.com/">
-    <meta property="og:image" content="https://saima.gbjsolution.com/content/images/2020/04/saima-gul-headshot.jpg">
+    <meta property="og:url" content="https://husanibragimov.uz/">
     <meta property="article:publisher" content="https://www.facebook.com/gbjsolution">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Husan.I">
     <meta name="twitter:description"
           content="A backend programmer from Uzbekistan who wants to change himself and never stops striving. This is my personal blog.">
-    <meta name="twitter:url" content="https://saima.gbjsolution.com/">
-    <meta name="twitter:image" content="https://saima.gbjsolution.com/content/images/2020/04/saima-gul-headshot.jpg">
+    <meta name="twitter:url" content="https://husanibragimov.uz/">
+{#    <meta name="twitter:image" content="https://husanibragimov.uz/content/images/2020/04/saima-gul-headshot.jpg">#}
     <meta name="twitter:site" content="@husanibragimov_">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="1320">
 
     <meta name="generator" content="Ghost 5.74">
     <link rel="alternate" type="application/rss+xml" title="Husan.I" href="{% url 'blog:home' %}">
-    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.36/umd/portal.min.js" data-i18n="false" data-ghost="https://saima.gbjsolution.com/" data-key="46b9130d3e409da72d2eaffd28" data-api="https://saima.gbjsolution.com/ghost/api/content/" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.36/umd/portal.min.js" data-i18n="false"
+            data-ghost="https://husanibragimov.uz/" data-key="46b9130d3e409da72d2eaffd28"></script>
     <style id="gh-members-styles">
         .gh-post-upgrade-cta-content,
         .gh-post-upgrade-cta {
@@ -118,27 +119,12 @@
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js"
             data-key="46b9130d3e409da72d2eaffd28"
             data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css"
-            data-sodo-search="https://saima.gbjsolution.com/" crossorigin="anonymous"></script>
+            data-sodo-search="https://husanibragimov.uz/" crossorigin="anonymous"></script>
 
     <link href="{% url 'blog:home' %}" rel="webmention">
     <script defer src="{% static '' %}public/cards.mind845.js?v=3c9bb59ff1"></script>
     <link rel="stylesheet" type="text/css" href="{% static '' %}public/cards.mind845.css?v=3c9bb59ff1">
     <script defer src="{% static '' %}public/member-attribution.mind845.js?v=3c9bb59ff1"></script>
-    <!-- <script>
-window.onload = function () {
-    let portal = document.getElementById("ghost-portal-root");
-    const interval = setInterval(() => {
-        let frame = portal.querySelector('[title="portal-popup"]');
-        if (frame !== null) {
-            const styleElement = document.createElement("style");
-            styleElement.innerHTML = `.gh-portal-powered { display: none; }`;
-            frame.contentDocument.head.appendChild(styleElement);
-        } else {
-            frame = null
-        }
-    }, 300)
-}
-</script> -->
     <style>
         :root {
             --ghost-accent-color: #fb873c;
@@ -163,13 +149,7 @@ window.onload = function () {
                         <li class="nav-item {% if request.resolver_match.url_name == 'blog_list' %}nav-item-current{% endif %}">
                             <a href="{% url 'blog:blog_list' %}">Blogs</a></li>
                         <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}nav-item-current{% endif %}">
-                            <a href="{% url 'blog:contact' %}">Contact</a></li>
-                        {#                        <li class="nav-item "><a href="elements/index.html">Elements</a></li>#}
-                        {#                        <li class="nav-item "><a href="tags/index.html">Tags</a></li>#}
-                        {#                        <li class="nav-item "><a href="authors/index.html">Authors</a></li>#}
-                        {#                        <li class="nav-item "><a href="yearly-archive/index.html">Yearly Archive</a></li>#}
-                        {#                        <li class="nav-item "><a href="monthly-archive/index.html">Monthly Archive</a></li>#}
-                        {##}
+                            <a href="{% url 'blog:contact' %}">More</a></li>
                         {#                        <li class="nav-item">#}
                         {#                            <a href="signin/index.html">Log in</a>#}
                         {#                        </li>#}
@@ -211,13 +191,6 @@ window.onload = function () {
                         </span>
                     </div>
                 </a>
-{#                <a href="javascript:" class="nav-icon search-icon" aria-label="Open search" data-ghost-search>#}
-{#                    <span class="search-icon">#}
-{#                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">#}
-{#                            <path d="M22.655 19.9989L18.6896 16.0452C19.969 14.4152 20.6632 12.4024 20.6607 10.3303C20.6607 8.48497 20.1134 6.68104 19.0882 5.14668C18.063 3.61231 16.6058 2.41642 14.9009 1.71023C13.196 1.00404 11.32 0.819271 9.51007 1.17928C7.70017 1.5393 6.03766 2.42792 4.73279 3.73279C3.42792 5.03766 2.5393 6.70017 2.17928 8.51007C1.81927 10.32 2.00404 12.196 2.71023 13.9009C3.41642 15.6058 4.61231 17.063 6.14668 18.0882C7.68104 19.1134 9.48497 19.6607 11.3303 19.6607C13.4024 19.6632 15.4152 18.969 17.0452 17.6896L20.9989 21.655C21.1073 21.7643 21.2363 21.8511 21.3784 21.9103C21.5205 21.9695 21.673 22 21.8269 22C21.9809 22 22.1334 21.9695 22.2755 21.9103C22.4176 21.8511 22.5466 21.7643 22.655 21.655C22.7643 21.5466 22.8511 21.4176 22.9103 21.2755C22.9695 21.1334 23 20.9809 23 20.8269C23 20.673 22.9695 20.5205 22.9103 20.3784C22.8511 20.2363 22.7643 20.1073 22.655 19.9989V19.9989ZM4.33259 10.3303C4.33259 8.94631 4.743 7.59337 5.51192 6.44259C6.28084 5.29182 7.37374 4.3949 8.65241 3.86526C9.93108 3.33561 11.3381 3.19704 12.6955 3.46705C14.053 3.73705 15.2998 4.40353 16.2785 5.38218C17.2571 6.36083 17.9236 7.60771 18.1936 8.96514C18.4636 10.3226 18.325 11.7296 17.7954 13.0083C17.2658 14.2869 16.3688 15.3798 15.2181 16.1487C14.0673 16.9177 12.7144 17.3281 11.3303 17.3281C9.47441 17.3281 7.69451 16.5908 6.38218 15.2785C5.06985 13.9662 4.33259 12.1862 4.33259 10.3303Z"></path>#}
-{#                        </svg>#}
-{#                    </span>#}
-{#                </a>#}
                 <a class="menu-icon nav-icon" id="menu-toggle">
                     <span class="line"></span>
                     <span class="line"></span>
@@ -246,220 +219,16 @@ window.onload = function () {
 
     {% endblock %}
 
-    <footer class="site-footer-wrap">
-        <div class="container">
-            <div class="site-footer">
-                <div class="row">
-                    <div class="col-lg-2 col-md-3 col-sm-6">
-                        <div class="widget">
-                            <h5 class="widget-title">Navigation</h5>
-                            <div class="widget-content">
-                                <ul class="nav-list">
-                                    <li class="nav-item {% if request.resolver_match.url_name == 'home' %}nav-item-current{% endif %}">
-                                        <a href="{% url 'blog:home' %}">Home</a></li>
-                                    <li class="nav-item {% if request.resolver_match.url_name == 'about' %}nav-item-current{% endif %}">
-                                        <a href="{% url 'blog:about' %}">About</a></li>
-                                    <li class="nav-item {% if request.resolver_match.url_name == 'blog_list' %}nav-item-current{% endif %}">
-                                        <a href="{% url 'blog:blog_list' %}">Blogs</a></li>
-                                    <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}nav-item-current{% endif %}">
-                                        <a href="{% url 'blog:contact' %}">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-6">
-                        <div class="widget">
-                            <h5 class="widget-title">Social media</h5>
-                            <div class="widget-content">
-                                <ul class="nav-list">
-                                    <li><a href="https://github.com/husanibragimov">GitHub</a></li>
-                                    <li><a href="https://twitter.com/husanibragimov_">Twitter</a></li>
-                                    <li><a href="https://www.linkedin.com/in/husanibragimov/">LinkedIn</a></li>
-                                    <li><a href="https://t.me/husandev/">Telegram</a></li>
-                                    <li><a href="https://www.instagram.com/husanibragimov_/">Instagram</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="widget widget-tag">
-                            <h5 class="widget-title">Tags</h5>
-                            <div class="widget-content">
-                                <ul class="tag-list">
-                                    <li><a href="#">Food</a></li>
-                                    <li><a href="#">Health</a></li>
-                                    <li><a href="#">Inspiration</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Nature</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Technology</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="widget widget-subscribe">
-                            <h5 class="widget-title">Subscribe</h5>
-                            <div class="widget-content">
-                                <p>Stay up to date! Get all the latest posts delivered straight to your inbox.</p>
-                                <form class="signup-form" data-members-form="subscribe">
-                                    <div class="form-field-wrap field-group-inline">
-                                        <label for="email" class="sr-only">Email</label>
-                                        <input data-members-email type="email" class="email" id="email"
-                                               placeholder="Your email address" required="">
-                                        <button class="btn btn-primary btn-submit" type="submit">Subscribe</button>
-                                    </div>
-                                    <div class="text-center">
-                                        <div class="message-success"><strong>Great!</strong> Check your inbox and
-                                            click the link to confirm your subscription
-                                        </div>
-                                        <div class="message-error"><strong>Error!</strong> Please enter a valid
-                                            email address!
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="copyright text-center">
-                            &copy; 2024 <a href="https://t.me/husandev/">Husan.I</a> - All right Reserved.
-                        </div>
-                    </div>
-                </div>
+    <div class="text-center">
+        <div class="">
+            <div class="copyright text-center">
+                <h6>&copy; 2024 <a href="#">husanibragimov.uz</a></h6>
             </div>
-        </div>
-    </footer>
-</div>
-<div class="notification notification-subscribe text-center">
-    <a class="notification-close" href="javascript:">
-        <span class="close-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.3477 11.9986L21.5075 4.85447C21.821 4.54089 21.9972 4.11558 21.9972 3.67211C21.9972 3.22864 21.821 2.80333 21.5075 2.48975C21.1939 2.17617 20.7687 2 20.3253 2C19.8819 2 19.4566 2.17617 19.1431 2.48975L12 9.65051L4.8569 2.48975C4.54337 2.17617 4.11812 2 3.67471 2C3.2313 2 2.80606 2.17617 2.49252 2.48975C2.17898 2.80333 2.00284 3.22864 2.00284 3.67211C2.00284 4.11558 2.17898 4.54089 2.49252 4.85447L9.65227 11.9986L2.49252 19.1427C2.33646 19.2975 2.21259 19.4817 2.12805 19.6846C2.04352 19.8875 2 20.1052 2 20.3251C2 20.5449 2.04352 20.7626 2.12805 20.9655C2.21259 21.1684 2.33646 21.3526 2.49252 21.5074C2.64731 21.6635 2.83147 21.7874 3.03437 21.8719C3.23727 21.9565 3.4549 22 3.67471 22C3.89452 22 4.11215 21.9565 4.31505 21.8719C4.51796 21.7874 4.70211 21.6635 4.8569 21.5074L12 14.3466L19.1431 21.5074C19.2979 21.6635 19.482 21.7874 19.6849 21.8719C19.8878 21.9565 20.1055 22 20.3253 22C20.5451 22 20.7627 21.9565 20.9656 21.8719C21.1685 21.7874 21.3527 21.6635 21.5075 21.5074C21.6635 21.3526 21.7874 21.1684 21.8719 20.9655C21.9565 20.7626 22 20.5449 22 20.3251C22 20.1052 21.9565 19.8875 21.8719 19.6846C21.7874 19.4817 21.6635 19.2975 21.5075 19.1427L14.3477 11.9986Z"></path>
-            </svg>
-        </span>
-    </a>
-    You&#x27;ve successfully subscribed to Husan.I
-</div>
-
-<div class="notification notification-signup text-center">
-    <a class="notification-close" href="javascript:">
-        <span class="close-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.3477 11.9986L21.5075 4.85447C21.821 4.54089 21.9972 4.11558 21.9972 3.67211C21.9972 3.22864 21.821 2.80333 21.5075 2.48975C21.1939 2.17617 20.7687 2 20.3253 2C19.8819 2 19.4566 2.17617 19.1431 2.48975L12 9.65051L4.8569 2.48975C4.54337 2.17617 4.11812 2 3.67471 2C3.2313 2 2.80606 2.17617 2.49252 2.48975C2.17898 2.80333 2.00284 3.22864 2.00284 3.67211C2.00284 4.11558 2.17898 4.54089 2.49252 4.85447L9.65227 11.9986L2.49252 19.1427C2.33646 19.2975 2.21259 19.4817 2.12805 19.6846C2.04352 19.8875 2 20.1052 2 20.3251C2 20.5449 2.04352 20.7626 2.12805 20.9655C2.21259 21.1684 2.33646 21.3526 2.49252 21.5074C2.64731 21.6635 2.83147 21.7874 3.03437 21.8719C3.23727 21.9565 3.4549 22 3.67471 22C3.89452 22 4.11215 21.9565 4.31505 21.8719C4.51796 21.7874 4.70211 21.6635 4.8569 21.5074L12 14.3466L19.1431 21.5074C19.2979 21.6635 19.482 21.7874 19.6849 21.8719C19.8878 21.9565 20.1055 22 20.3253 22C20.5451 22 20.7627 21.9565 20.9656 21.8719C21.1685 21.7874 21.3527 21.6635 21.5075 21.5074C21.6635 21.3526 21.7874 21.1684 21.8719 20.9655C21.9565 20.7626 22 20.5449 22 20.3251C22 20.1052 21.9565 19.8875 21.8719 19.6846C21.7874 19.4817 21.6635 19.2975 21.5075 19.1427L14.3477 11.9986Z"></path>
-            </svg>
-        </span>
-    </a>
-    Great! Next, complete checkout to get full access to all premium content.
-</div>
-
-<div class="notification notification-signin text-center">
-    <a class="notification-close" href="javascript:">
-        <span class="close-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.3477 11.9986L21.5075 4.85447C21.821 4.54089 21.9972 4.11558 21.9972 3.67211C21.9972 3.22864 21.821 2.80333 21.5075 2.48975C21.1939 2.17617 20.7687 2 20.3253 2C19.8819 2 19.4566 2.17617 19.1431 2.48975L12 9.65051L4.8569 2.48975C4.54337 2.17617 4.11812 2 3.67471 2C3.2313 2 2.80606 2.17617 2.49252 2.48975C2.17898 2.80333 2.00284 3.22864 2.00284 3.67211C2.00284 4.11558 2.17898 4.54089 2.49252 4.85447L9.65227 11.9986L2.49252 19.1427C2.33646 19.2975 2.21259 19.4817 2.12805 19.6846C2.04352 19.8875 2 20.1052 2 20.3251C2 20.5449 2.04352 20.7626 2.12805 20.9655C2.21259 21.1684 2.33646 21.3526 2.49252 21.5074C2.64731 21.6635 2.83147 21.7874 3.03437 21.8719C3.23727 21.9565 3.4549 22 3.67471 22C3.89452 22 4.11215 21.9565 4.31505 21.8719C4.51796 21.7874 4.70211 21.6635 4.8569 21.5074L12 14.3466L19.1431 21.5074C19.2979 21.6635 19.482 21.7874 19.6849 21.8719C19.8878 21.9565 20.1055 22 20.3253 22C20.5451 22 20.7627 21.9565 20.9656 21.8719C21.1685 21.7874 21.3527 21.6635 21.5075 21.5074C21.6635 21.3526 21.7874 21.1684 21.8719 20.9655C21.9565 20.7626 22 20.5449 22 20.3251C22 20.1052 21.9565 19.8875 21.8719 19.6846C21.7874 19.4817 21.6635 19.2975 21.5075 19.1427L14.3477 11.9986Z"></path>
-            </svg>
-        </span>
-    </a>
-    Welcome back! You&#x27;ve successfully signed in.
-</div>
-
-<div class="notification error notification-signin-failure text-center">
-    <a class="notification-close" href="javascript:">
-        <span class="close-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.3477 11.9986L21.5075 4.85447C21.821 4.54089 21.9972 4.11558 21.9972 3.67211C21.9972 3.22864 21.821 2.80333 21.5075 2.48975C21.1939 2.17617 20.7687 2 20.3253 2C19.8819 2 19.4566 2.17617 19.1431 2.48975L12 9.65051L4.8569 2.48975C4.54337 2.17617 4.11812 2 3.67471 2C3.2313 2 2.80606 2.17617 2.49252 2.48975C2.17898 2.80333 2.00284 3.22864 2.00284 3.67211C2.00284 4.11558 2.17898 4.54089 2.49252 4.85447L9.65227 11.9986L2.49252 19.1427C2.33646 19.2975 2.21259 19.4817 2.12805 19.6846C2.04352 19.8875 2 20.1052 2 20.3251C2 20.5449 2.04352 20.7626 2.12805 20.9655C2.21259 21.1684 2.33646 21.3526 2.49252 21.5074C2.64731 21.6635 2.83147 21.7874 3.03437 21.8719C3.23727 21.9565 3.4549 22 3.67471 22C3.89452 22 4.11215 21.9565 4.31505 21.8719C4.51796 21.7874 4.70211 21.6635 4.8569 21.5074L12 14.3466L19.1431 21.5074C19.2979 21.6635 19.482 21.7874 19.6849 21.8719C19.8878 21.9565 20.1055 22 20.3253 22C20.5451 22 20.7627 21.9565 20.9656 21.8719C21.1685 21.7874 21.3527 21.6635 21.5075 21.5074C21.6635 21.3526 21.7874 21.1684 21.8719 20.9655C21.9565 20.7626 22 20.5449 22 20.3251C22 20.1052 21.9565 19.8875 21.8719 19.6846C21.7874 19.4817 21.6635 19.2975 21.5075 19.1427L14.3477 11.9986Z"></path>
-            </svg>
-        </span>
-    </a>
-    Unable to sign you in. Please try again.
-</div>
-
-<div class="notification notification-checkout text-center">
-    <a class="notification-close" href="javascript:">
-        <span class="close-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.3477 11.9986L21.5075 4.85447C21.821 4.54089 21.9972 4.11558 21.9972 3.67211C21.9972 3.22864 21.821 2.80333 21.5075 2.48975C21.1939 2.17617 20.7687 2 20.3253 2C19.8819 2 19.4566 2.17617 19.1431 2.48975L12 9.65051L4.8569 2.48975C4.54337 2.17617 4.11812 2 3.67471 2C3.2313 2 2.80606 2.17617 2.49252 2.48975C2.17898 2.80333 2.00284 3.22864 2.00284 3.67211C2.00284 4.11558 2.17898 4.54089 2.49252 4.85447L9.65227 11.9986L2.49252 19.1427C2.33646 19.2975 2.21259 19.4817 2.12805 19.6846C2.04352 19.8875 2 20.1052 2 20.3251C2 20.5449 2.04352 20.7626 2.12805 20.9655C2.21259 21.1684 2.33646 21.3526 2.49252 21.5074C2.64731 21.6635 2.83147 21.7874 3.03437 21.8719C3.23727 21.9565 3.4549 22 3.67471 22C3.89452 22 4.11215 21.9565 4.31505 21.8719C4.51796 21.7874 4.70211 21.6635 4.8569 21.5074L12 14.3466L19.1431 21.5074C19.2979 21.6635 19.482 21.7874 19.6849 21.8719C19.8878 21.9565 20.1055 22 20.3253 22C20.5451 22 20.7627 21.9565 20.9656 21.8719C21.1685 21.7874 21.3527 21.6635 21.5075 21.5074C21.6635 21.3526 21.7874 21.1684 21.8719 20.9655C21.9565 20.7626 22 20.5449 22 20.3251C22 20.1052 21.9565 19.8875 21.8719 19.6846C21.7874 19.4817 21.6635 19.2975 21.5075 19.1427L14.3477 11.9986Z"></path>
-            </svg>
-        </span>
-    </a>
-    Success! Your account is fully activated, you now have access to all content.
-</div>
-
-<div class="notification error notification-checkout-cancel text-center">
-    <a class="notification-close" href="javascript:">
-        <span class="close-icon"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.3477 11.9986L21.5075 4.85447C21.821 4.54089 21.9972 4.11558 21.9972 3.67211C21.9972 3.22864 21.821 2.80333 21.5075 2.48975C21.1939 2.17617 20.7687 2 20.3253 2C19.8819 2 19.4566 2.17617 19.1431 2.48975L12 9.65051L4.8569 2.48975C4.54337 2.17617 4.11812 2 3.67471 2C3.2313 2 2.80606 2.17617 2.49252 2.48975C2.17898 2.80333 2.00284 3.22864 2.00284 3.67211C2.00284 4.11558 2.17898 4.54089 2.49252 4.85447L9.65227 11.9986L2.49252 19.1427C2.33646 19.2975 2.21259 19.4817 2.12805 19.6846C2.04352 19.8875 2 20.1052 2 20.3251C2 20.5449 2.04352 20.7626 2.12805 20.9655C2.21259 21.1684 2.33646 21.3526 2.49252 21.5074C2.64731 21.6635 2.83147 21.7874 3.03437 21.8719C3.23727 21.9565 3.4549 22 3.67471 22C3.89452 22 4.11215 21.9565 4.31505 21.8719C4.51796 21.7874 4.70211 21.6635 4.8569 21.5074L12 14.3466L19.1431 21.5074C19.2979 21.6635 19.482 21.7874 19.6849 21.8719C19.8878 21.9565 20.1055 22 20.3253 22C20.5451 22 20.7627 21.9565 20.9656 21.8719C21.1685 21.7874 21.3527 21.6635 21.5075 21.5074C21.6635 21.3526 21.7874 21.1684 21.8719 20.9655C21.9565 20.7626 22 20.5449 22 20.3251C22 20.1052 21.9565 19.8875 21.8719 19.6846C21.7874 19.4817 21.6635 19.2975 21.5075 19.1427L14.3477 11.9986Z"></path>
-                </svg>
-            </span></a>
-    Error! Stripe checkout failed.
-</div>
-
-<div class="notification notification-billing-success text-center">
-    <a class="notification-close" href="javascript:">
-        <span class="close-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.3477 11.9986L21.5075 4.85447C21.821 4.54089 21.9972 4.11558 21.9972 3.67211C21.9972 3.22864 21.821 2.80333 21.5075 2.48975C21.1939 2.17617 20.7687 2 20.3253 2C19.8819 2 19.4566 2.17617 19.1431 2.48975L12 9.65051L4.8569 2.48975C4.54337 2.17617 4.11812 2 3.67471 2C3.2313 2 2.80606 2.17617 2.49252 2.48975C2.17898 2.80333 2.00284 3.22864 2.00284 3.67211C2.00284 4.11558 2.17898 4.54089 2.49252 4.85447L9.65227 11.9986L2.49252 19.1427C2.33646 19.2975 2.21259 19.4817 2.12805 19.6846C2.04352 19.8875 2 20.1052 2 20.3251C2 20.5449 2.04352 20.7626 2.12805 20.9655C2.21259 21.1684 2.33646 21.3526 2.49252 21.5074C2.64731 21.6635 2.83147 21.7874 3.03437 21.8719C3.23727 21.9565 3.4549 22 3.67471 22C3.89452 22 4.11215 21.9565 4.31505 21.8719C4.51796 21.7874 4.70211 21.6635 4.8569 21.5074L12 14.3466L19.1431 21.5074C19.2979 21.6635 19.482 21.7874 19.6849 21.8719C19.8878 21.9565 20.1055 22 20.3253 22C20.5451 22 20.7627 21.9565 20.9656 21.8719C21.1685 21.7874 21.3527 21.6635 21.5075 21.5074C21.6635 21.3526 21.7874 21.1684 21.8719 20.9655C21.9565 20.7626 22 20.5449 22 20.3251C22 20.1052 21.9565 19.8875 21.8719 19.6846C21.7874 19.4817 21.6635 19.2975 21.5075 19.1427L14.3477 11.9986Z"></path>
-                </svg>
-            </span></a>
-    Success! Your billing info is updated.
-</div>
-
-<div class="notification error notification-billing-cancel text-center">
-    <a class="notification-close" href="javascript:">
-        <span class="close-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.3477 11.9986L21.5075 4.85447C21.821 4.54089 21.9972 4.11558 21.9972 3.67211C21.9972 3.22864 21.821 2.80333 21.5075 2.48975C21.1939 2.17617 20.7687 2 20.3253 2C19.8819 2 19.4566 2.17617 19.1431 2.48975L12 9.65051L4.8569 2.48975C4.54337 2.17617 4.11812 2 3.67471 2C3.2313 2 2.80606 2.17617 2.49252 2.48975C2.17898 2.80333 2.00284 3.22864 2.00284 3.67211C2.00284 4.11558 2.17898 4.54089 2.49252 4.85447L9.65227 11.9986L2.49252 19.1427C2.33646 19.2975 2.21259 19.4817 2.12805 19.6846C2.04352 19.8875 2 20.1052 2 20.3251C2 20.5449 2.04352 20.7626 2.12805 20.9655C2.21259 21.1684 2.33646 21.3526 2.49252 21.5074C2.64731 21.6635 2.83147 21.7874 3.03437 21.8719C3.23727 21.9565 3.4549 22 3.67471 22C3.89452 22 4.11215 21.9565 4.31505 21.8719C4.51796 21.7874 4.70211 21.6635 4.8569 21.5074L12 14.3466L19.1431 21.5074C19.2979 21.6635 19.482 21.7874 19.6849 21.8719C19.8878 21.9565 20.1055 22 20.3253 22C20.5451 22 20.7627 21.9565 20.9656 21.8719C21.1685 21.7874 21.3527 21.6635 21.5075 21.5074C21.6635 21.3526 21.7874 21.1684 21.8719 20.9655C21.9565 20.7626 22 20.5449 22 20.3251C22 20.1052 21.9565 19.8875 21.8719 19.6846C21.7874 19.4817 21.6635 19.2975 21.5075 19.1427L14.3477 11.9986Z"></path>
-            </svg>
-        </span>
-    </a>
-    Error! Billing info update failed.
-</div>
-<div class="search-popup js-search-popup">
-    <div class="search-popup-bg"></div>
-    <a href="javascript:" class="close-button" id="search-close" aria-label="Close search">
-        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14.3477 11.9986L21.5075 4.85447C21.821 4.54089 21.9972 4.11558 21.9972 3.67211C21.9972 3.22864 21.821 2.80333 21.5075 2.48975C21.1939 2.17617 20.7687 2 20.3253 2C19.8819 2 19.4566 2.17617 19.1431 2.48975L12 9.65051L4.8569 2.48975C4.54337 2.17617 4.11812 2 3.67471 2C3.2313 2 2.80606 2.17617 2.49252 2.48975C2.17898 2.80333 2.00284 3.22864 2.00284 3.67211C2.00284 4.11558 2.17898 4.54089 2.49252 4.85447L9.65227 11.9986L2.49252 19.1427C2.33646 19.2975 2.21259 19.4817 2.12805 19.6846C2.04352 19.8875 2 20.1052 2 20.3251C2 20.5449 2.04352 20.7626 2.12805 20.9655C2.21259 21.1684 2.33646 21.3526 2.49252 21.5074C2.64731 21.6635 2.83147 21.7874 3.03437 21.8719C3.23727 21.9565 3.4549 22 3.67471 22C3.89452 22 4.11215 21.9565 4.31505 21.8719C4.51796 21.7874 4.70211 21.6635 4.8569 21.5074L12 14.3466L19.1431 21.5074C19.2979 21.6635 19.482 21.7874 19.6849 21.8719C19.8878 21.9565 20.1055 22 20.3253 22C20.5451 22 20.7627 21.9565 20.9656 21.8719C21.1685 21.7874 21.3527 21.6635 21.5075 21.5074C21.6635 21.3526 21.7874 21.1684 21.8719 20.9655C21.9565 20.7626 22 20.5449 22 20.3251C22 20.1052 21.9565 19.8875 21.8719 19.6846C21.7874 19.4817 21.6635 19.2975 21.5075 19.1427L14.3477 11.9986Z"></path>
-        </svg>
-    </a>
-    <div class="popup-inner">
-        <div class="inner-container">
-            <form class="search-form" id="search-form">
-                <div class="field-group-inline">
-                    <div class="search-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.655 19.9989L18.6896 16.0452C19.969 14.4152 20.6632 12.4024 20.6607 10.3303C20.6607 8.48497 20.1134 6.68104 19.0882 5.14668C18.063 3.61231 16.6058 2.41642 14.9009 1.71023C13.196 1.00404 11.32 0.819271 9.51007 1.17928C7.70017 1.5393 6.03766 2.42792 4.73279 3.73279C3.42792 5.03766 2.5393 6.70017 2.17928 8.51007C1.81927 10.32 2.00404 12.196 2.71023 13.9009C3.41642 15.6058 4.61231 17.063 6.14668 18.0882C7.68104 19.1134 9.48497 19.6607 11.3303 19.6607C13.4024 19.6632 15.4152 18.969 17.0452 17.6896L20.9989 21.655C21.1073 21.7643 21.2363 21.8511 21.3784 21.9103C21.5205 21.9695 21.673 22 21.8269 22C21.9809 22 22.1334 21.9695 22.2755 21.9103C22.4176 21.8511 22.5466 21.7643 22.655 21.655C22.7643 21.5466 22.8511 21.4176 22.9103 21.2755C22.9695 21.1334 23 20.9809 23 20.8269C23 20.673 22.9695 20.5205 22.9103 20.3784C22.8511 20.2363 22.7643 20.1073 22.655 19.9989V19.9989ZM4.33259 10.3303C4.33259 8.94631 4.743 7.59337 5.51192 6.44259C6.28084 5.29182 7.37374 4.3949 8.65241 3.86526C9.93108 3.33561 11.3381 3.19704 12.6955 3.46705C14.053 3.73705 15.2998 4.40353 16.2785 5.38218C17.2571 6.36083 17.9236 7.60771 18.1936 8.96514C18.4636 10.3226 18.325 11.7296 17.7954 13.0083C17.2658 14.2869 16.3688 15.3798 15.2181 16.1487C14.0673 16.9177 12.7144 17.3281 11.3303 17.3281C9.47441 17.3281 7.69451 16.5908 6.38218 15.2785C5.06985 13.9662 4.33259 12.1862 4.33259 10.3303Z"></path>
-                        </svg>
-                    </div>
-                    <input type="text" class="search-input" placeholder="Type to search" id="search-input"
-                           aria-label="Type to search" role="searchbox">
-                </div>
-            </form>
-            <div class="search-close-note">Press ESC to close.</div>
-            <div class="search-result" id="search-results"></div>
         </div>
     </div>
 </div>
-<a href="javascript:" id="back-to-top" class="flex back-top-btn">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M5.23 10.64a1 1 0 0 0 1.41.13L11 7.14V19a1 1 0 0 0 2 0V7.14l4.36 3.63a1 1 0 1 0 1.28-1.54l-6-5-.15-.09-.13-.07a1 1 0 0 0-.72 0l-.13.07-.15.09-6 5a1 1 0 0 0-.13 1.41z"></path>
-    </svg>
-</a>
-<script>
-    var apiKey = ``.trim();
-    var nextPage = '2';
-    var totalPages = '4';
-    var loadingText = 'Loading...';
-</script>
 
 <script src="{% static '' %}assets/js/app.bundle.mind845.js?v=3c9bb59ff1"></script>
 
 </body>
-
-<!-- Mirrored from saima.gbjsolution.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2024 15:58:33 GMT -->
-
 </html>

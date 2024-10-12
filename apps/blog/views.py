@@ -24,11 +24,11 @@ class BlogArchiveView(ListView):
     context_object_name = 'blogs'
 
     def get_queryset(self):
-        return Blog.objects.filter(is_published=True) \
+        return Blog.objects.all() \
             .prefetch_related('tags') \
             .annotate(year=F("created_at__year"),
                       get_absolute_url=Concat(Value('/blog/'), 'slug', Value('/'), output_field=CharField())) \
-            .values("title", "slug", "created_at", "year", "get_absolute_url")
+            .values("title", "slug", "created_at", "year", "get_absolute_url", "is_published")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

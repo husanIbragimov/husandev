@@ -34,12 +34,15 @@
                     {% for post in object_list %}
                         <div class="post">
                             <div class="post-info">
-                                <span class="primary-tag"><a href="{{ post.get_absolute_url }}">News</a></span>
+                                {% if post.is_published %}
+                                    <span class="primary-tag" title="Published"><img src="{% static 'open-book.svg' %}" width="15" height="15" alt="Published"></span>
+                                {% else %}
+                                    <span class="primary-tag" title="Coming soon"><img src="{% static 'lock.svg' %}" width="15" height="15" alt="Coming soon"></span>
+                                {% endif %}
                                 <span class="date"><time
                                         datetime="{{ post.created_at|date:'Y-m-d' }}">{{ post.created_at|date:'j F, Y' }}</time></span>
-                                <span class="visibility">Free</span>
                             </div>
-                            <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                            <h3 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
                             <div class="post-excerpt">
                                 <a href="{{ post.get_absolute_url }}">
                                     <p>{{ post.content|safe|truncatewords:14 }}</p>

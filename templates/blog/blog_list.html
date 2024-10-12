@@ -15,8 +15,17 @@
                                         {% for blog in blogs %}
                                             <article class="archive-post">
                                                 <div class="inner">
+                                                    {% if blog.is_published %}
+                                                        <span class="primary-tag" style="margin-right: 5px" title="Published"><img src="{% static 'open-book.svg' %}" width="15" height="15" alt="Published"></span>
+                                                    {% else %}
+                                                        <span class="primary-tag" style="margin-right: 5px" title="Coming soon"><img src="{% static 'lock.svg' %}" width="15" height="15" alt="Coming soon"></span>
+                                                    {% endif %}
                                                     <time class="post-date" datetime="{{ blog.created_at|date:'Y-m-d' }}">{{ blog.created_at|date:"M d" }} -</time>
-                                                    <h2 class="title h5"><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h2>
+                                                    {% if blog.is_published %}
+                                                        <h2 class="title h5"><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h2>
+                                                    {% else %}
+                                                        <h2 class="title h5">{{ blog.title }}</h2>
+                                                    {% endif %}
                                                 </div>
                                             </article>
                                         {% endfor %}
