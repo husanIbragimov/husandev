@@ -4,37 +4,64 @@
 {% block title %}Contact me{% endblock %}
 
 {% block content %}
-    <div class="main">
-            <div class="single-post-wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-{#                            <div class="featured-image-wrap">#}
-{#                                <img class="lazy"#}
-{#                                    data-srcset="/content/images/size/w300/2020/04/diana-akhmetianova-On9DW1VZC2Q-unsplash.jpg 300w,#}
-{#                                    /content/images/size/w600/2020/04/diana-akhmetianova-On9DW1VZC2Q-unsplash.jpg 600w,#}
-{#                                    /content/images/size/w1000/2020/04/diana-akhmetianova-On9DW1VZC2Q-unsplash.jpg 1000w,#}
-{#                                    /content/images/size/w1600/2020/04/diana-akhmetianova-On9DW1VZC2Q-unsplash.jpg 1600w"#}
-{#                                    sizes="(max-width: 600px) 600px, (max-width: 1160px) 1000px, 1140px"#}
-{#                                    data-src="../content/images/size/w300/2020/04/diana-akhmetianova-On9DW1VZC2Q-unsplash.jpg"#}
-{#                                    alt="Contact" />#}
-{#                            </div>#}
-                            <div class="post-inner-wrap">
-                                <h1 class="post-title">Contact</h1>
-                                <div class="post-content">
-                                    <p>Hello! Do you have any question or suggestion about this site, or just want to
-                                        say Hi? Send me a message using below form. I will get back to you as soon as
-                                        possible.</p><!--kg-card-begin: html-->
-                                    <form action="https://formspree.io/your@email.com" method="POST">
-                                        <input type="text" name="name" placeholder="Full name">
-                                        <input type="email" name="_replyto" placeholder="Email">
-                                        <input type="text" name="subject" placeholder="Subject">
-                                        <textarea name="message" placeholder="Message"></textarea>
-                                        <input class="btn btn-primary" type="submit" value="Send Message" rows="4">
-                                    </form><!--kg-card-end: html-->
-                                </div>
+    <div class="main custom-archive">
+{#            <section class="cover-wrap">#}
+{#                <div class="container">#}
+{#                    <div class="archive-cover has-image">#}
+{#                        <img class="lazy feature-image" data-srcset="/content/images/size/w300/2020/04/dave-zN7wRrxXjik-unsplash.jpg 300w,#}
+{#                            /content/images/size/w600/2020/04/dave-zN7wRrxXjik-unsplash.jpg 600w,#}
+{#                            /content/images/size/w1000/2020/04/dave-zN7wRrxXjik-unsplash.jpg 1000w,#}
+{#                            /content/images/size/w1600/2020/04/dave-zN7wRrxXjik-unsplash.jpg 1600w"#}
+{#                            sizes="(max-width: 600px) 600px, (max-width: 1160px) 1000px, 1140px"#}
+{#                            data-src="../content/images/size/w1000/2020/04/dave-zN7wRrxXjik-unsplash.jpg" alt="Tags" />#}
+{#                        <div class="cover-content-wrapper text-center">#}
+{#                            <h1 class="titlte h2">Tags</h1>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </section>#}
+            <div class="container custom-list-wrapper">
+            <h1 class="post-title">Socials</h1>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 item-card-wrap">
+                        <a href="https://www.linkedin.com/in/husanibragimov/" class="item-card">
+                            <div class="item-card-inner text-center">
+                                <img src="{% static 'socials/linkedin.svg' %}" alt="LinkedIn" width="20" height="20">
+                                <div class="tag-name h4">LinkedIn</div>
                             </div>
-                        </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 item-card-wrap">
+                        <a href="https://github.com/husanIbragimov/" class="item-card">
+                            <div class="item-card-inner text-center">
+                                <img src="{% static 'socials/github-white.svg' %}" alt="GitHub" width="20" height="20">
+                                <div class="tag-name h4">GitHub</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 item-card-wrap">
+                        <a href="https://t.me/husandev" class="item-card">
+                            <div class="item-card-inner text-center">
+                                <img src="{% static 'socials/Telegram.svg' %}" alt="Telegram" width="20" height="20">
+                                <div class="tag-name h4">Telegram</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 item-card-wrap">
+                        <a href="https://x.com/husanibragimov_" class="item-card">
+                            <div class="item-card-inner text-center">
+                                <img src="{% static 'socials/x_twitter.svg' %}" alt="X(Twitter)" width="20" height="20">
+                                <div class="tag-name h4">Twitter</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 item-card-wrap">
+                        <a href="https://instagram.com/husanibragimov_" class="item-card">
+                            <div class="item-card-inner text-center">
+                                <img style="margin-top: 2px" src="{% static 'socials/instagram.png' %}" alt="Instagram" width="20" height="20">
+                                <div class="tag-name h4">Instagram</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

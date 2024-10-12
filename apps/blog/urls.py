@@ -8,5 +8,5 @@ urlpatterns = [
     path('blogs/', BlogArchiveView, name='blog_list'),
     path('blog/<slug:slug>/', BlogDetailView.as_view(), name='blog_detail'),
     path('about/', about, name='about'),
-    path('contact/', contact, name='contact'),
+    path('more/', contact, name='contact'),
 ]
