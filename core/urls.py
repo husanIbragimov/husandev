@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from debug_toolbar.toolbar import debug_toolbar_urls
+from apps.about.views import members
 
 handler404 = "core.errors.handler404"
 handler500 = "core.errors.handler500"
@@ -27,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('apps.blog.urls')),
+    path('/members/api/member/', members, name="members"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
