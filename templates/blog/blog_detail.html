@@ -130,8 +130,7 @@
                                 <div class="post prev-post">
                                     <a href="{{ previous_post.get_absolute_url }}" class="flex">
                                         <div class="featured-image">
-                                            <img class="lazy" data-src="
-                                                    {% if previous_post.featured_image %}{{ previous_post.get_image_url }}{% else %}https://via.placeholder.com/600x400.png?text=No+Image{% endif %}"
+                                            <img class="lazy" data-src="{{ previous_post.get_image_url }}"
                                                  alt="{{ previous_post.title }}">
                                         </div>
                                         <div class="content-wrap">
@@ -147,8 +146,7 @@
                         {% if next_post %}
                             <div class="col-md-6">
                                 <div class="post next-post">
-                                    <a href="{% if next_post.get_absolute_url %}
-                                        {{ next_post.get_absolute_url }}{% else %}https://via.placeholder.com/600x400.png?text=No+Image{% endif %}"
+                                    <a href="{{ next_post.get_absolute_url }}"
                                        class="flex">
                                         <div class="featured-image">
                                             <img class="lazy" data-src="{{ next_post.get_image_url }}"
