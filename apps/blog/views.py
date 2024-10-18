@@ -49,6 +49,7 @@ class BlogDetailView(SingleObjectMixin, ListView):
     context_object_name = 'object'
     slug_url_kwarg = 'slug'
     queryset = Blog.objects.filter(is_published=True)
+    paginate_by = 1
 
     def get(self, request, *args, **kwargs):
         self.object = self.get_object(queryset=self.get_queryset().prefetch_related('tags'))
@@ -57,7 +58,15 @@ class BlogDetailView(SingleObjectMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tags'] = self.object.tags.all() if self.object.tags.exists() else []
+        context['previous_post'] = self.get_previous_post()
+        context['next_post'] = self.get_next_post()
         return context
+
+    def get_previous_post(self):
+        return self.queryset.filter(id__lt=self.object.id).order_by('-id').first()
+
+    def get_next_post(self):
+        return self.queryset.filter(id__gt=self.object.id).order_by('id').first()
 
 
 def about(request):
