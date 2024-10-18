@@ -45,7 +45,7 @@
                             <h3 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
                             <div class="post-excerpt">
                                 <a href="{{ post.get_absolute_url }}">
-                                    <p>{{ post.content|safe|truncatewords:14 }}</p>
+                                    <p>{{ post.introduction|truncatewords:14 }}</p>
                                 </a>
                             </div>
                         </div>
