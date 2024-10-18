@@ -35,7 +35,7 @@ DEBUG = env("DEBUG", default=False)
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = [env.list("CSRF_TRUSTED_ORIGINS", default=["*"])]
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=["*"])
 
 TESTING = True if (len(sys.argv) > 1 and sys.argv[1] == "test") else False
 
