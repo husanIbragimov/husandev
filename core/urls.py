@@ -14,11 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
+from debug_toolbar.toolbar import debug_toolbar_urls
 from django.conf import settings
 from django.conf.urls.static import static
-from debug_toolbar.toolbar import debug_toolbar_urls
+from django.contrib import admin
+from django.urls import path, include, re_path
+from django.views.static import serve
+
 from apps.about.views import members
 
 handler404 = "core.errors.handler404"
@@ -29,6 +31,10 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('apps.blog.urls')),
     path('  members/api/member/', members, name="members"),
+
+    # media
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -36,5 +42,5 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if not settings.TESTING:
     urlpatterns = [
-        *urlpatterns,
-    ] + debug_toolbar_urls()
+                      *urlpatterns,
+                  ] + debug_toolbar_urls()

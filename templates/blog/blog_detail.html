@@ -11,8 +11,6 @@
                 <div class="row">
                     <div class="col">
                         <div class="featured-image-wrap">
-                        {{ object.image.url }}
-                        {{ object.get_image_url }}
                             <img class="lazy" data-srcset="{% if object.image %}{{ object.image.url }}{% else %}https://via.placeholder.com/800x400.png?text=No+Image{% endif %}"
                                  data-src="{% if object.image %}{{ object.image.url }}{% else %}https://via.placeholder.com/800x400.png?text=No+Image{% endif %}"
                                  alt="It is during our darkest moments that we must focus to see the light"/>
