@@ -11,9 +11,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="featured-image-wrap">
-                            <img class="lazy"
-                                 data-srcset="{{ object.get_image_url }}"
-                                 data-src="{{ object.get_image_url }}"
+                            <img class="lazy" data-srcset="{% if object.image %}{{ object.image.url }}{% else %}https://via.placeholder.com/800x400.png?text=No+Image{% endif %}"
+                                 data-src="{% if object.image %}{{ object.image.url }}{% else %}https://via.placeholder.com/800x400.png?text=No+Image{% endif %}"
                                  alt="It is during our darkest moments that we must focus to see the light"/>
                         </div>
                         <div class="post-inner-wrap">
@@ -129,7 +128,7 @@
                                 <div class="post prev-post">
                                     <a href="{{ previous_post.get_absolute_url }}" class="flex">
                                         <div class="featured-image">
-                                            <img class="lazy" data-src="{{ previous_post.get_image_url }}"
+                                            <img class="lazy" data-src="{% if previous_post.image %}{{ previous_post.image.url }}{% else %}https://via.placeholder.com/800x400.png?text=No+Image{% endif %}"
                                                  alt="{{ previous_post.title }}">
                                         </div>
                                         <div class="content-wrap">
@@ -148,7 +147,7 @@
                                     <a href="{{ next_post.get_absolute_url }}"
                                        class="flex">
                                         <div class="featured-image">
-                                            <img class="lazy" data-src="{{ next_post.get_image_url }}"
+                                            <img class="lazy" data-src="{% if next_post.image %}{{ next_post.image.url }}{% else %}https://via.placeholder.com/800x400.png?text=No+Image{% endif %}"
                                                  alt="{{ next_post.title }}">
                                         </div>
                                         <div class="content-wrap">
