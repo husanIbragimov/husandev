@@ -12,15 +12,14 @@
                     <div class="col">
                         <div class="featured-image-wrap">
                             <img class="lazy"
-                                 data-srcset="{{ object.get_image_url }} 1140w, {{ object.get_image_url }} 1000w, {{ object.get_image_url }} 600w"
-                                 sizes="(max-width: 600px) 600px, (max-width: 1160px) 1000px, 1140px"
+                                 data-srcset="{{ object.get_image_url }}"
                                  data-src="{{ object.get_image_url }}"
                                  alt="It is during our darkest moments that we must focus to see the light"/>
                         </div>
                         <div class="post-inner-wrap">
                             <div class="post-info">
                                     <span class="primary-tag"><a
-                                            href="{{ object.get_absolute_url }}">Inspiration</a></span>
+                                            href="{{ object.get_absolute_url }}">Article</a></span>
                                 <span class="date"><time
                                         datetime="{{ object.created_at|date:'Y-m-d' }}">{{ object.created_at|date:'j F, Y' }}</time></span>
                                 <span class="read-time">read</span>
