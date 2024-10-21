@@ -28,56 +28,56 @@
                 </div>
             </div>
         </section>
-        <section>
-            <div class="container">
-                <div class="post-loop-wrap">
-                    {% for post in object_list %}
-                        <div class="post">
-                            <div class="post-info">
-                                {% if post.is_published %}
-                                    <span class="primary-tag" title="Published"><img src="{% static 'open-book.svg' %}" width="15" height="15" alt="Published"></span>
-                                {% else %}
-                                    <span class="primary-tag" title="Coming soon"><img src="{% static 'lock.svg' %}" width="15" height="15" alt="Coming soon"></span>
-                                {% endif %}
-                                <span class="date"><time
-                                        datetime="{{ post.created_at|date:'Y-m-d' }}">{{ post.created_at|date:'j F, Y' }}</time></span>
-                            </div>
-                            <h3 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
-                            <div class="post-excerpt">
-                                <a href="{{ post.get_absolute_url }}">
-                                    <p>{{ post.introduction|truncatewords:14 }}</p>
-                                </a>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-                </div>
-                {% if is_paginated %}
-                    <div class="pagination-wrap flex" role="navigation">
-                        <div class="newer-posts">
-                            {% if page_obj.has_previous %}
-                                <a href="?page={{ page_obj.previous_page_number }}">
-                                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-                                        <path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"></path>
-                                    </svg>
-                                    Newer Posts</a>
-                            {% endif %}
-                        </div>
-                        <span class="page-number text-center">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
-                        <div class="older-posts">
-                            {% if page_obj.has_next %}
-                                <a href="?page={{ page_obj.next_page_number }}">Older Posts
-                                    <svg width="24" height="24"
-                                         xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-                                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"></path>
-                                    </svg>
-                                </a>
-                            {% endif %}
-                        </div>
-                    </div>
-                {% endif %}
-            </div>
-        </section>
+{#        <section>#}
+{#            <div class="container">#}
+{#                <div class="post-loop-wrap">#}
+{#                    {% for post in object_list %}#}
+{#                        <div class="post">#}
+{#                            <div class="post-info">#}
+{#                                {% if post.is_published %}#}
+{#                                    <span class="primary-tag" title="Published"><img src="{% static 'open-book.svg' %}" width="15" height="15" alt="Published"></span>#}
+{#                                {% else %}#}
+{#                                    <span class="primary-tag" title="Coming soon"><img src="{% static 'lock.svg' %}" width="15" height="15" alt="Coming soon"></span>#}
+{#                                {% endif %}#}
+{#                                <span class="date"><time#}
+{#                                        datetime="{{ post.created_at|date:'Y-m-d' }}">{{ post.created_at|date:'j F, Y' }}</time></span>#}
+{#                            </div>#}
+{#                            <h3 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>#}
+{#                            <div class="post-excerpt">#}
+{#                                <a href="{{ post.get_absolute_url }}">#}
+{#                                    <p>{{ post.introduction|truncatewords:14 }}</p>#}
+{#                                </a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{##}
+{#                </div>#}
+{#                {% if is_paginated %}#}
+{#                    <div class="pagination-wrap flex" role="navigation">#}
+{#                        <div class="newer-posts">#}
+{#                            {% if page_obj.has_previous %}#}
+{#                                <a href="?page={{ page_obj.previous_page_number }}">#}
+{#                                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">#}
+{#                                        <path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"></path>#}
+{#                                    </svg>#}
+{#                                    Newer Posts</a>#}
+{#                            {% endif %}#}
+{#                        </div>#}
+{#                        <span class="page-number text-center">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>#}
+{#                        <div class="older-posts">#}
+{#                            {% if page_obj.has_next %}#}
+{#                                <a href="?page={{ page_obj.next_page_number }}">Older Posts#}
+{#                                    <svg width="24" height="24"#}
+{#                                         xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">#}
+{#                                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"></path>#}
+{#                                    </svg>#}
+{#                                </a>#}
+{#                            {% endif %}#}
+{#                        </div>#}
+{#                    </div>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#        </section>#}
     </div>
 
 {% endblock %}

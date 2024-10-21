@@ -146,12 +146,6 @@
                             <a href="{% url 'blog:blog_list' %}">Blogs</a></li>
                         <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}nav-item-current{% endif %}">
                             <a href="{% url 'blog:contact' %}">More</a></li>
-                        {#                        <li class="nav-item">#}
-                        {#                            <a href="signin/index.html">Log in</a>#}
-                        {#                        </li>#}
-                        {#                        <li class="nav-item">#}
-                        {#                            <a href="signup/index.html">Sign up</a>#}
-                        {#                        </li>#}
                     </ul>
                 </nav>
                 <a href="javascript:" class="nav-icon theme-icon" id="js-toggle-dark-light"

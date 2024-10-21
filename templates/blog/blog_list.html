@@ -24,7 +24,7 @@
                                                     {% if blog.is_published %}
                                                         <h2 class="title h5"><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h2>
                                                     {% else %}
-                                                        <h2 class="title h5">{{ blog.title }}</h2>
+                                                        <h2 class="title h5" title="Coming soon...">{{ blog.title }}</h2>
                                                     {% endif %}
                                                 </div>
                                             </article>

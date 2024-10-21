@@ -17,11 +17,7 @@
                         </div>
                         <div class="post-inner-wrap">
                             <div class="post-info">
-                                    <span class="primary-tag"><a
-                                            href="{{ object.get_absolute_url }}">Article</a></span>
-                                <span class="date"><time
-                                        datetime="{{ object.created_at|date:'Y-m-d' }}">{{ object.created_at|date:'j F, Y' }}</time></span>
-                                <span class="read-time">read</span>
+                                    <time datetime="{{ object.created_at|date:'Y-m-d' }}">{{ object.created_at|date:'j F, Y' }}</time>
                             </div>
                             <h1 class="post-title">{{ object.title }}</h1>
                             <div class="post-content">
