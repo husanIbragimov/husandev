@@ -19,6 +19,11 @@
                                 <hr>
                                 <h3 id="meet-people-like-you">Other blogs</h3>
                                 <p>You may also join other my channels. I am also active in <a href="https://t.me/husandev/">Telegram</a>.</p>
+                                {% if resume.file %}
+                                    <hr>
+                                    <h3 id="contact-me">Resume</h3>
+                                    <p>You can download my resume from <a href="{{ resume.file.url }}" download>here</a>.</p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

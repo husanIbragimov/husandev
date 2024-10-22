@@ -6,6 +6,14 @@ from django.urls import reverse
 from django.utils.text import slugify
 
 
+class Resume(models.Model):
+    file = models.FileField(blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Resume {self.id} - {self.created_at.date()}"
+
+
 class Tag(models.Model):
     title = models.CharField(max_length=50, blank=False, null=False)
 

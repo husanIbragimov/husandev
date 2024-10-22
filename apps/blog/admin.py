@@ -4,9 +4,11 @@ from django.contrib import admin
 from django.shortcuts import render
 from django.urls import path
 
-from .models import Blog, Tag
+from .models import Blog, Tag, Resume
 
 admin.site.register(Tag)
+admin.site.register(Resume)
+
 
 class PostAdminForm(forms.ModelForm):
     content = forms.CharField(widget=CKEditorWidget())

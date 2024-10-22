@@ -8,7 +8,7 @@ from django.views.decorators.cache import cache_page
 from django.views.generic import ListView
 from django.views.generic.detail import SingleObjectMixin
 
-from .models import Blog
+from .models import Blog, Resume
 
 
 class HomeIndexView(ListView):
@@ -70,7 +70,8 @@ class BlogDetailView(SingleObjectMixin, ListView):
 
 
 def about(request):
-    return render(request, 'blog/about.html')
+    resume = Resume.objects.last()
+    return render(request, 'blog/about.html', {'resume': resume})
 
 
 def contact(request):
