@@ -27,7 +27,7 @@ handler404 = "core.errors.handler404"
 handler500 = "core.errors.handler500"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('published/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('apps.blog.urls')),
     path('  members/api/member/', members, name="members"),
