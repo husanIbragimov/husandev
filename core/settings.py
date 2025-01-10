@@ -147,12 +147,57 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Logging
+# https://docs.djangoproject.com/en/5.1/topics/logging/
+
+DJANGO_LOG_LEVEL = env.str("DJANGO_LOG_LEVEL", "INFO")
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+        "log_file": {
+            "level": "DEBUG",
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "filename": "logs/django_debug.log",
+            "formatter": "verbose",
+            "when": "D",
+            "interval": 1,
+            "backupCount": 7,
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console", "log_file"],
+            "level": DJANGO_LOG_LEVEL,
+            "propagate": False,
+        },
+        "root": {
+            "handlers": ["console", "log_file"],
+            "level": DJANGO_LOG_LEVEL,
+        },
+        "": {
+            "handlers": ["console", "log_file"],
+            "level": DJANGO_LOG_LEVEL,
+        },
+    },
+    "formatters": {
+        "verbose": {
+            "format": "{asctime} ({levelname})- {name}- {message}\n",
+            "style": "{",
+        }
+    },
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 LANGUAGE_CODE = 'en'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 

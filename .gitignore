@@ -166,3 +166,4 @@ cython_debug/
 /static/ckeditor/
 /static/debug_toolbar/
 old.sqlite3
+/logs/
