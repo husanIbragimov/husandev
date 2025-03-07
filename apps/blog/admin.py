@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import *
 
 
@@ -30,9 +31,14 @@ class MeImagesInline(admin.TabularInline):
     extra = 1
 
 
+class SkillsInline(admin.TabularInline):
+    model = Skills
+    extra = 1
+
+
 @admin.register(AboutMe)
 class AboutMeAdmin(admin.ModelAdmin):
-    inlines = [MeImagesInline, ExperienceInline, EducationInline]
+    inlines = [SkillsInline, MeImagesInline, ExperienceInline, EducationInline]
     list_display = ('title', 'age')
     # readonly_fields = ('my_age',)
 
