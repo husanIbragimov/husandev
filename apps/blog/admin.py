@@ -24,9 +24,9 @@ class BlogAdmin(admin.ModelAdmin):
     list_display = ['title', 'created_at', 'is_published']
     list_filter = ['is_published']
     search_fields = ['title', 'content']
-    readonly_fields = ['slug', 'created_at', 'updated_at']
+    readonly_fields = ['created_at', 'updated_at']
     filter_horizontal = ['tags']
-    # prepopulated_fields = {'slug': ('title',)}
+    prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created_at'
     save_on_top = True
     save_as = True
