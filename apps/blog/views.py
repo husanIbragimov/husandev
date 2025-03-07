@@ -1,19 +1,19 @@
 from django.shortcuts import render
-from .models import BlogNews, AboutMe, Education, Experience, MeImages, Resume, MainImage
-from apps.service.models import BannerDetail, Category, Portfolio
+
 from apps.contact.models import GetInTouch
+from apps.service.models import Category, Portfolio
+from .models import BlogNews, AboutMe, Education, Experience, MeImages, Resume, MainImage
 
 
 def index(request):
     # main page
-    about_qs = AboutMe.objects.all().last()
+    about_qs = AboutMe.objects.prefetch_related('skills', 'experiences', 'educations', 'my_images').last()
     educations = Education.objects.all().order_by("-id")
     experiences = Experience.objects.all().order_by("-id")
-    my_images = MeImages.objects.filter(blog_id=about_qs).order_by('-id')
     resume = Resume.objects.last()
     category = Category.objects.all().order_by('-id')
     portfolios = Portfolio.objects.all().order_by('-id')
-    blogs = BlogNews.objects.all().order_by('-id')
+    blogs = BlogNews.objects.all().prefetch_related('blogimages_set').order_by('-id')
     main_image = MainImage.objects.all().last()
 
     if request.method == 'POST':
@@ -34,7 +34,6 @@ def index(request):
     ctx = {
         "resume": resume,
         "about": about_qs,
-        "about_imgs": my_images,
         "educations": educations,
         "experiences": experiences,
 

@@ -1,10 +1,12 @@
+import random
+
 from django.db import models
 from ckeditor.fields import RichTextField
 from datetime import datetime
 
 
 class MainImage(models.Model):
-    image = models.ImageField(upload_to='media/main_images/', null=True, blank=True)
+    image = models.ImageField(upload_to='main_images/', null=True, blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateField(auto_now_add=True)
 
@@ -13,7 +15,7 @@ class MainImage(models.Model):
 
 
 class Resume(models.Model):
-    resume = models.FileField(upload_to='media/resume/', null=True)
+    resume = models.FileField(upload_to='resume/', null=True)
     created_at = models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -30,7 +32,7 @@ class BlogNews(models.Model):
 
 class BlogImages(models.Model):
     blog = models.ForeignKey(BlogNews, on_delete=models.CASCADE, null=True, blank=True)
-    image = models.ImageField(upload_to=f'media/blog_images/', null=True, blank=True)
+    image = models.ImageField(upload_to=f'blog_images/', null=True, blank=True)
     description = RichTextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
@@ -61,6 +63,15 @@ class AboutMe(models.Model):
         return f"{self.title}"
 
 
+class Skills(models.Model):
+    blog = models.ForeignKey(AboutMe, on_delete=models.CASCADE, null=True, blank=True, related_name='skills')
+    skill = models.CharField(max_length=127, null=True, blank=True)
+    percent = models.IntegerField(default=random.randint(50, 100))
+
+    def __str__(self):
+        return f"{self.skill}"
+
+
 class Experience(models.Model):
     blog = models.ForeignKey(AboutMe, on_delete=models.CASCADE, null=True, blank=True, related_name='experiences')
     experience = models.CharField(max_length=50, null=True, blank=True)
@@ -85,7 +96,7 @@ class Education(models.Model):
 
 class MeImages(models.Model):
     blog = models.ForeignKey(AboutMe, on_delete=models.CASCADE, null=True, blank=True, related_name='my_images')
-    image = models.ImageField(upload_to=f'media/about_me/', null=True, blank=True)
+    image = models.ImageField(upload_to=f'about/', null=True, blank=True)
     description = RichTextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
