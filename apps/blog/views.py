@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
 
 from apps.contact.models import GetInTouch
@@ -7,6 +8,7 @@ from .models import BlogNews, AboutMe, Education, Experience, MeImages, Resume, 
 
 def index(request):
     # main page
+    user = User.objects.last()
     about_qs = AboutMe.objects.prefetch_related('skills', 'experiences', 'educations', 'my_images').last()
     educations = Education.objects.all().order_by("-id")
     experiences = Experience.objects.all().order_by("-id")
@@ -32,6 +34,7 @@ def index(request):
         return render(request, 'index.html', {'success': 'Your message has been sent successfully.'})
 
     ctx = {
+        "user": user,
         "resume": resume,
         "about": about_qs,
         "educations": educations,
