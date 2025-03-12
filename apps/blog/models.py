@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 class MainImage(models.Model):
-    image = models.ImageField(upload_to='media/main_images/', null=True, blank=True)
+    image = models.ImageField(upload_to='main/', null=True, blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateField(auto_now_add=True)
 
@@ -13,7 +13,7 @@ class MainImage(models.Model):
 
 
 class Resume(models.Model):
-    resume = models.FileField(upload_to='media/resume/', null=True)
+    resume = models.FileField(upload_to='resumes/', null=True)
     created_at = models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -30,7 +30,7 @@ class BlogNews(models.Model):
 
 class BlogImages(models.Model):
     blog = models.ForeignKey(BlogNews, on_delete=models.CASCADE, null=True, blank=True)
-    image = models.ImageField(upload_to=f'media/blog_images/', null=True, blank=True)
+    image = models.ImageField(upload_to=f'blogs/', null=True, blank=True)
     description = RichTextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
@@ -85,7 +85,7 @@ class Education(models.Model):
 
 class MeImages(models.Model):
     blog = models.ForeignKey(AboutMe, on_delete=models.CASCADE, null=True, blank=True, related_name='my_images')
-    image = models.ImageField(upload_to=f'media/about_me/', null=True, blank=True)
+    image = models.ImageField(upload_to=f'about/', null=True, blank=True)
     description = RichTextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
 

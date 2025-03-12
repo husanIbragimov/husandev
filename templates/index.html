@@ -23,7 +23,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="description" content="Ibragimov's blog site">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Ibragimov's Blog</title>
+    <title>Nodirdev's Blog</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description"
           content="husan uz, xusan uz, husan ,xusan, husan dev, xusan dev, husandev, xusandev, ibragimovxusan, ibragimovhusan, husanibragimov, xusanibragimov, husanibragimov uz, xusanibragimov uz, husanibragimovuz, xusanibragimovuz, husan ibragimov, xusan ibragimov, ibragimov husan, ibragimov xusan, ibragimovdev, ibragimov dev, dasturchi, developer, builder, python">
@@ -38,18 +38,16 @@
     <meta property="og:type" content="">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dark.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="{% static '' %}css/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="{% static '' %}css/dark.css" />
+    <link rel="stylesheet" type="text/css" href="{% static '' %}css/style.css" />
 
 </head>
-<body class="">
+<body class="dark">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -68,8 +66,8 @@
         <div class="topbar_inner">
             <div class="logo" data-type="">
                 <a href="#">
-{#                    <img src="{% static 'img/logo/Frame.png' %}" alt=""/>#}
-                    <h3 style="font-size: 15px">IBRAGIMOV'S BLOG</h3>
+                    {#                    <img src="{% static 'img/logo/Frame.png' %}" alt=""/>#}
+                    <h3 style="font-size: 15px">NODIRDEV'S BLOG</h3>
                 </a>
             </div>
             <div class="trigger">
@@ -100,7 +98,7 @@
             <div class="logo" data-type="">
                 <a href="#">
                     {#                    <img src="{% static 'img/logo/Frame.png' %}" alt=""/>#}
-                    <h3 style="font-size: 25px">IBRAGIMOV'S BLOG</h3>
+                    <h3 style="font-size: 25px">NODIRDEV'S BLOG</h3>
                 </a>
             </div>
             <div class="menu">
@@ -113,7 +111,7 @@
                 </ul>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Ibragimov's Blog
+                <p>&copy; 2025 NODIRDEV'S Blog
                 </p>
             </div>
         </div>
@@ -131,19 +129,17 @@
                                 <div class="image" data-img-url="{{ main_image.image.url }}"></div>
                             </div>
                             <div class="details">
-                                <h3 class="name">HUSAN <span>IBRAGIMOV</span></h3>
-                                <h5 style="color: #636d7f; font-weight: bold">Backend Engineer</h5>
+                                <h3 class="name">NODIR <span>ISKANDAROV</span></h3>
+                                <h5 style="color: #636d7f; font-weight: bold">{{ about.title }}</h5>
                                 <p class="job">Get big solutions to big problems.</p>
                                 <div class="social">
                                     <ul>
                                         <li><a href="https://www.facebook.com/husanibragimov.uz"><i
-                                            style="font-size: 24px;" class="icon-facebook-squared"></i></a></li>
-                                        <li><a href="https://twitter.com/husanibragimov_"><i
-                                            style="font-size: 24px;" class="icon-twitter-squared"></i></a></li>
+                                                style="font-size: 24px;" class="icon-facebook-squared"></i></a></li>
                                         <li><a href="https://github.com/husanIbragimov"><i
-                                            style="font-size: 24px;" class="icon-github-squared"></i></a></li>
+                                                style="font-size: 24px;" class="icon-github-squared"></i></a></li>
                                         <li><a href="https://www.linkedin.com/in/husanibragimov/"><i
-                                            style="font-size: 24px;" class="icon-linkedin-squared"></i></a></li>
+                                                style="font-size: 24px;" class="icon-linkedin-squared"></i></a></li>
                                         <li><a href="https://t.me/husandev/"><i
                                                 class="icon-telegram"></i></a></li>
                                     </ul>
@@ -166,28 +162,25 @@
                                 </div>
                             </div>
                         </div>
-                        {% for about_img in about_imgs %}
-                            <div class="top_author_image">
-                                <img src="{{ about_img.image.url }}" alt="husanibragimov uz" height="900" width="400"/>
-                            </div>
+                        {% if about.my_images.first.image %}
+                        <div class="top_author_image">
+                            <img src="{{ about.my_images.first.image.url }}" alt="nodirdev uz" height="900" width="400"/>
+                        </div>
+                        {% endif %}
 
-                            <div class="about_text">
-                                <p>{{ about_img.description|safe }}</p>
-                            </div>
-                        {% endfor %}
+                        <div class="about_text">
+                            <p>{{ about_img.my_images.first.description|safe }}</p>
+                        </div>
                         <div class="tokyo_tm_short_info">
                             <div class="left">
                                 <div class="tokyo_tm_info">
                                     <ul>
-
                                         <li><span>Birthday:</span><span>{{ about.birthday }}</span></li>
                                         <li><span>Age:</span><span>{{ about.age }}</span></li>
                                         <li><span>Address:</span><span>{{ about.address }}</span></li>
                                         <li><span>Email:</span><span>{{ about.email }}</span></li>
-                                        <li><span>Phone:</span><span><a
-                                                href="tel:{{ about.phone_number }}">{{ about.phone_number }}</a></span>
+                                        <li><span>Phone:</span><span><a href="tel:{{ about.phone_number }}">{{ about.phone_number }}</a></span>
                                         </li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -383,46 +376,46 @@
                 </div>
             </div>
             <div id="contact" class="tokyo_tm_section">
-                    <div class="container">
-                        <div class="tokyo_tm_contact">
-                            <div class="tokyo_tm_title">
-                                <div class="title_flex">
-                                    <div class="left">
-                                        <span>Contact</span>
-                                        <h3>Get in Touch</h3>
-                                    </div>
+                <div class="container">
+                    <div class="tokyo_tm_contact">
+                        <div class="tokyo_tm_title">
+                            <div class="title_flex">
+                                <div class="left">
+                                    <span>Contact</span>
+                                    <h3>Get in Touch</h3>
                                 </div>
                             </div>
-                            <div class="fields">
-                                <form method="post" class="contact_form" id="contact_form" autocomplete="off">
-                                    {% csrf_token %}
-                                    <div class="returnmessage"
-                                        data-success="Your message has been received, We will contact you soon."></div>
-                                    <div class="empty_notice"><span>Please Fill Required Fields</span></div>
-                                    <div class="first">
-                                        <ul>
-                                            <li>
-                                                <input id="name" type="text" name="name" placeholder="Name">
-                                            </li>
-                                            <li>
-                                                <input id="email" type="text" name="email" placeholder="Email">
-                                            </li>
-                                            <li>
-                                                <input id="phone" type="tel" name="phone" placeholder="Phone number">
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="last">
-                                        <textarea id="message" name="message" placeholder="Message"></textarea>
-                                    </div>
-                                    <div class="tokyo_tm_button" data-position="left">
-                                        <button type="submit" class="btn sent_message">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
+                        </div>
+                        <div class="fields">
+                            <form method="post" class="contact_form" id="contact_form" autocomplete="off">
+                                {% csrf_token %}
+                                <div class="returnmessage"
+                                     data-success="Your message has been received, We will contact you soon."></div>
+                                <div class="empty_notice"><span>Please Fill Required Fields</span></div>
+                                <div class="first">
+                                    <ul>
+                                        <li>
+                                            <input id="name" type="text" name="name" placeholder="Name">
+                                        </li>
+                                        <li>
+                                            <input id="email" type="text" name="email" placeholder="Email">
+                                        </li>
+                                        <li>
+                                            <input id="phone" type="tel" name="phone" placeholder="Phone number">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="last">
+                                    <textarea id="message" name="message" placeholder="Message"></textarea>
+                                </div>
+                                <div class="tokyo_tm_button" data-position="left">
+                                    <button type="submit" class="btn sent_message">Send Message</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 

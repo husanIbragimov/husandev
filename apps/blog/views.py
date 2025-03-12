@@ -6,10 +6,9 @@ from apps.contact.models import GetInTouch
 
 def index(request):
     # main page
-    about_qs = AboutMe.objects.all().last()
+    about_qs = AboutMe.objects.prefetch_related('experiences', 'educations', 'my_images').last()
     educations = Education.objects.all().order_by("-id")
     experiences = Experience.objects.all().order_by("-id")
-    my_images = MeImages.objects.filter(blog_id=about_qs).order_by('-id')
     resume = Resume.objects.last()
     category = Category.objects.all().order_by('-id')
     portfolios = Portfolio.objects.all().order_by('-id')
@@ -34,7 +33,6 @@ def index(request):
     ctx = {
         "resume": resume,
         "about": about_qs,
-        "about_imgs": my_images,
         "educations": educations,
         "experiences": experiences,
 
