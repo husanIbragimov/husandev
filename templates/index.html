@@ -306,9 +306,9 @@
                                                  data-title="{{ portfolio.name }}"
                                                  data-category="{{ portfolio.category.name }}">
                                                 <a href="{{ portfolio.link }}">
-                                                    <img src="{{ portfolio.image.url }}" alt=""/>
+                                                    <img src="{% if portfolio.image %}{{ portfolio.image.url }}{% endif %}" alt=""/>
                                                     <div class="abs_image"
-                                                         data-img-url="{{ portfolio.image.url }}"></div>
+                                                         data-img-url="{% if portfolio.image %}{{ portfolio.image.url }}{% endif %}"></div>
                                                 </a>
                                             </div>
                                         </div>

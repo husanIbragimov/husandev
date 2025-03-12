@@ -11,7 +11,6 @@ class GetInTouch(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
     phone_number = models.CharField(validators=[phone_regex], max_length=17,
-                                    blank=True, unique=True,
                                     help_text='for example: +998 __ ___ __ __')  # validators should be a list
     message = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

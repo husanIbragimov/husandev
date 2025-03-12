@@ -20,7 +20,6 @@ def index(request):
         email = request.POST.get('email', None)
         phone_number = request.POST.get('phone', None)
         message = request.POST.get('message', None)
-        print(name, email, phone_number, message)
 
         GetInTouch.objects.create(
             name=name,
